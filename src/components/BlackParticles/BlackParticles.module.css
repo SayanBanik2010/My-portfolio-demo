@@ -1,0 +1,38 @@
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: wheat;
+    border-radius: 50%;
+    animation: floatParticle 5s infinite ease-in-out;
+    box-shadow: 0 0 10px wheat, 0 0 20px wheat, 0 0 30px wheat;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50px) translateX(50px);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+:global(body.light-mode) .particle {
+    background: #888;
+    box-shadow: 0 0 10px #888, 0 0 20px #888, 0 0 30px #888;
+}

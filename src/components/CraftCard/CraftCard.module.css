@@ -1,0 +1,139 @@
+.card {
+    width: 370px;
+    height: 370px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2),
+        -15px -15px 30px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(50% - 40px);
+    max-width: calc(50% - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+    margin-top: 47px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    text-align: left;
+}
+
+.card ul li {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff4500;
+}
+
+.viewButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d71b64a1;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.viewButton:hover {
+    background: #d71b64a1;
+    transform: translateY(-3px);
+}
+
+.cardLogo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cardLogo img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+/* Light Mode Styles */
+body.light-mode .card {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1),
+        -15px -15px 30px rgba(255, 255, 255, 0.5);
+}
+
+body.light-mode .card h3 {
+    color: #333;
+}
+
+body.light-mode .card p {
+    color: #555;
+}
+
+body.light-mode .card ul li {
+    color: #555;
+}
+
+body.light-mode .viewButton {
+    background: #d71b64a1;
+    color: white;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.3),
+        -20px -20px 40px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+        max-width: 292px;
+        height: 400px;
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
