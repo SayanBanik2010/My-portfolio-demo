@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
 
   const toggleTheme = () => {
     setLightMode(!lightMode);
-    document.body.classList.toggle('light-mode'); // This applies the global class
+    document.body.classList.toggle('light-mode');
   };
 
   return (
@@ -22,14 +23,14 @@ const Header = () => {
       </div>
       
       <nav className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
-        <a href="home.html">Launchpad</a>
-        <a href="essence.html">Essence</a>
-        <a href="accademia.html">Accademia</a>
-        <a href="expertise.html">Expertise</a>
-        <a href="craft.html">Craft</a>
-        <a href="verified.html">Verified</a>
-        <a href="one-pager.html">One-Pager</a>
-        <a href="linkup.html">LinkUp</a>
+        <Link to="/">Launchpad</Link>
+        <Link to="/essence">Essence</Link>
+        <Link to="/accademia">Accademia</Link>
+        <Link to="/expertise">Expertise</Link>
+        <Link to="/craft">Craft</Link>
+        <Link to="/verified">Verified</Link>
+        <Link to="/one-pager">One-Pager</Link>
+        <Link to="/linkup">LinkUp</Link>
       </nav>
 
       {/* Hamburger Menu */}

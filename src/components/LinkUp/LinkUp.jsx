@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LinkUp.module.css'; // Import the CSS module
 
-const Linkup = () => {
+const LinkupForm = () => {
   return (
     <div className={styles.styledWrapper}>
       <div className={styles.formCard1}>
@@ -31,4 +31,4 @@ const Linkup = () => {
   );
 }
 
-export default Linkup;
+export default LinkupForm;

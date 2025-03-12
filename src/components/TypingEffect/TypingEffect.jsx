@@ -1,5 +1,5 @@
 import React from "react";
-import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import { useTypewriter} from 'react-simple-typewriter';
 import styles from './TypingEffect.module.css'; // Import the CSS Module
 
 const TypingEffect = () => {
