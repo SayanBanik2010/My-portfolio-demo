@@ -1,35 +1,39 @@
 .binaryRain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 18px;
-    font-family: monospace;
-    overflow: hidden;
-    white-space: nowrap;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-family: monospace;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999;
 }
 
 .binaryRain span {
-    position: absolute;
-    top: 0;
-    left: calc(100% * var(--i));
-    animation: binary-fall linear infinite;
-    animation-duration: calc(2s + var(--i) * 2s);
-    color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.15);
+  animation: binary-fall linear infinite;
+  font-size: clamp(14px, 2vw, 22px); /* Responsive font size */
+  opacity: 0.8;
 }
 
+/* Light Mode */
 .light-mode .binaryRain span {
-    color: rgba(255, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
+/* Keyframes for falling effect */
 @keyframes binary-fall {
-    0% {
-        transform: translateY(-100%);
-    }
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.5;
+  }
 
-    100% {
-        transform: translateY(100vh);
-    }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
 }

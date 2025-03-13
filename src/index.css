@@ -1,51 +1,91 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
+/* Universal Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* Dark Mode (Default) */
+/* Prevent Unwanted Scrollbars */
+html,
 body {
-  background: linear-gradient(135deg, #550000, #300000);
-  position: relative;
+  overflow-x: hidden; /* Removes horizontal scrolling */
+  overflow-y: auto; /* Allows smooth vertical scrolling */
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #3b0000, #200000);
   color: white;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
   min-height: 100vh;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  overflow-x: hidden; */
-}
-body::-webkit-scrollbar{
-  width: 10px;
-  background: #300000;
-}
-body::-webkit-scrollbar-thumb{
-  background: #6e1616;
-  border-radius: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  max-width: 100%;
 }
 
 /* Light Mode */
 body.light-mode {
   background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-  color: #333;
+  color: #222;
 }
-.launchpad{
+
+/* Hide Scrollbars */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+body.light-mode::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+body.light-mode::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Footer Fix */
+.footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Better separation */
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 -4px 10px rgba(255, 255, 255, 0.2);
+  position: relative;
+  bottom: 0;
+}
+
+/* Light Mode Footer */
+:global(body.light-mode) .footer {
+  background: #fff;
+  color: #333;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Launchpad Page Fix */
+.launchpad {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure no unwanted scrolling */
 }

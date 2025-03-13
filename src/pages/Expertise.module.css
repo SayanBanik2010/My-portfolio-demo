@@ -1,0 +1,76 @@
+/* Page Layout */
+.expertiseContainer {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card Section */
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
+
+/* Percentage Container */
+.percentageSection {
+  width: 80%;
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.percentageSection h2 {
+  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.percentageBar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.percentageFill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

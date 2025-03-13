@@ -1,21 +1,32 @@
-import React, { useEffect, useRef } from 'react';
-import styles from './BinaryRain.module.css';
+import React, { useEffect, useRef } from "react";
+import styles from "./BinaryRain.module.css";
 
 const BinaryRain = () => {
-  const binaryContainerRef = useRef(null); // Create a ref for the container
+  const binaryContainerRef = useRef(null);
 
   useEffect(() => {
-    const binaryContainer = binaryContainerRef.current; // Access the ref
+    const binaryContainer = binaryContainerRef.current;
 
-    // Generate binary rain
-    for (let i = 0; i < 30; i++) {
-      let span = document.createElement('span');
-      span.textContent = Math.random() > 0.5 ? '0' : '1';
-      span.style.setProperty('--i', Math.random());
-      span.style.left = `${Math.random() * 100}vw`;
-      span.style.animationDuration = `${2 + Math.random() * 3}s`;
-      binaryContainer.appendChild(span);
-    }
+    // Clear previous spans if they exist
+    binaryContainer.innerHTML = "";
+
+    // Create binary rain effect
+    const createBinaryRain = () => {
+      for (let i = 0; i < 50; i++) {
+        let span = document.createElement("span");
+        span.textContent = Math.random() > 0.5 ? "0" : "1";
+        span.style.left = `${Math.random() * 100}vw`;
+        span.style.animationDuration = `${2 + Math.random() * 3}s`;
+        binaryContainer.appendChild(span);
+      }
+    };
+
+    createBinaryRain();
+
+    // Cleanup function
+    return () => {
+      binaryContainer.innerHTML = "";
+    };
   }, []);
 
   return <div ref={binaryContainerRef} className={styles.binaryRain}></div>;

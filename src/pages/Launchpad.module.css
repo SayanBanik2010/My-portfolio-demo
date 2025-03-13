@@ -1,72 +1,72 @@
 /* Solar System Section */
 .solarSystem {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .sun {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, #ff8c00, #ff4500);
-    border-radius: 50%;
-    box-shadow: 0 0 50px #ff4500;
-    animation: glow 2s infinite alternate;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #ff8c00, #ff4500);
+  border-radius: 50%;
+  box-shadow: 0 0 50px #ff4500;
+  animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
-    0% {
-        box-shadow: 0 0 50px #ff4500;
-    }
+  0% {
+    box-shadow: 0 0 50px #ff4500;
+  }
 
-    100% {
-        box-shadow: 0 0 100px #ff8c00;
-    }
+  100% {
+    box-shadow: 0 0 100px #ff8c00;
+  }
 }
 
 .orbit {
-    position: absolute;
-    border: 2px dashed rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    animation: rotate-orbit linear infinite;
+  position: absolute;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rotate-orbit linear infinite;
 }
 
 @keyframes rotateOrbit {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .planet {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-size: cover;
-    animation: orbit linear infinite;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  animation: orbit linear infinite;
 }
 
 .planet img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 @keyframes orbit {
-    0% {
-        transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg);
-    }
+  100% {
+    transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg);
+  }
 }
