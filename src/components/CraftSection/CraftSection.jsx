@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './CraftSection.module.css'; // Scoped CSS for the section
 import CraftCard from '../CraftCard/CraftCard';// Import the CraftCard component
+import Particles from '../WhiteParticles/Particles';
+import Thunder from '../Thunder/Thunder';
+import Cloud from '../Cloud/Cloud';
 
 const CraftSection = () => {
     const cardsData = [
@@ -22,7 +25,13 @@ const CraftSection = () => {
 
     return (
         <section className={styles.craftSection}>
+
             <div className={styles.cardContainer}>
+                <Particles />
+                <Thunder />
+                <Cloud top={10} left={10} />
+                <Cloud top={30} left={50} />
+                <Cloud top={60} left={20} />
                 {cardsData.map((card, index) => (
                     <CraftCard
                         key={index}

@@ -14,26 +14,26 @@
     align-items: flex-start;
     gap: 1rem;
     margin-top: 73px;
-}
-
-.card:hover {
+  }
+  
+  .card:hover {
     transform: rotate(0deg);
-}
-
-.textContent {
+  }
+  
+  .textContent {
     color: #f9fafb;
-}
-
-.initials {
+  }
+  
+  .initials {
     font-weight: bold;
     font-size: 3rem;
-}
-
-.title {
+  }
+  
+  .title {
     font-size: 0.75rem;
-}
-
-.downloadBtn {
+  }
+  
+  .downloadBtn {
     transition: background-color 0.3s, color 0.3s;
     background-color: #f9fafb;
     border: none;
@@ -44,21 +44,21 @@
     align-items: center;
     gap: 0.75rem;
     cursor: pointer;
-}
-
-.downloadBtn:hover {
+  }
+  
+  .downloadBtn:hover {
     background-color: #0c4a6e;
     color: #f9fafb;
-}
-
-.icon {
+  }
+  
+  .icon {
     width: 1.5rem;
     height: 1.5rem;
     fill: currentColor;
-}
-
-.decorativeSvg1,
-.decorativeSvg2 {
+  }
+  
+  .decorativeSvg1,
+  .decorativeSvg2 {
     position: absolute;
     bottom: -0.125rem;
     right: -5rem;
@@ -68,21 +68,21 @@
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
     fill: #f9fafb;
-}
-
-.decorativeSvg1 {
+  }
+  
+  .decorativeSvg1 {
     stroke: #0c4a6e;
     stroke-width: 5;
     transition: transform 0.5s;
-}
-
-.decorativeSvg2 {
+  }
+  
+  .decorativeSvg2 {
     stroke: #0369a1;
     stroke-width: 2;
     transition: transform 0.2s;
-}
-
-.card:hover .decorativeSvg1,
-.card:hover .decorativeSvg2 {
+  }
+  
+  .card:hover .decorativeSvg1,
+  .card:hover .decorativeSvg2 {
     transform: scale(1.25);
-}
+  }

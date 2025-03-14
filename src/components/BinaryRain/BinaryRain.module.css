@@ -9,6 +9,7 @@
     overflow: hidden;
     white-space: nowrap;
     pointer-events: none;
+    z-index: 999;
 }
 
 .binaryRain span {
@@ -20,7 +21,7 @@
     color: rgba(255, 255, 255, 0.1);
 }
 
-.light-mode .binaryRain span {
+:global(body.light-mode) .binaryRain span {
     color: rgba(255, 0, 0, 0.3);
 }
 

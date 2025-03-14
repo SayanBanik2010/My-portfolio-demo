@@ -9,8 +9,9 @@
 
 .particle {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: clamp(2px, 0.5vw, 6px);
+    /* Responsive size */
+    height: clamp(2px, 0.5vw, 6px);
     background: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     animation: floatParticle 5s infinite ease-in-out;

@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px; /* Adjusted height to leave space for the solar system */
+    height: 50px; /* Adjusted height to leave space for the solar system */
     text-align: center; /* Ensures text stays centered */
     padding: 20px;
 }

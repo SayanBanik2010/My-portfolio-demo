@@ -12,32 +12,36 @@ code {
     monospace;
 }
 
+/* Universal Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden; /* Removes horizontal scrolling */
+  overflow-y: auto; /* Allows smooth vertical scrolling */
 }
 
 /* Dark Mode (Default) */
 body {
   background: linear-gradient(135deg, #550000, #300000);
-  position: relative;
   color: white;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
   min-height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  overflow-x: hidden; */
+  width: 100vw;
+  max-width: 100%;
+  max-width: 100%;
 }
-body::-webkit-scrollbar{
+/* body::-webkit-scrollbar{
   width: 10px;
   background: #300000;
-}
-body::-webkit-scrollbar-thumb{
-  background: #6e1616;
-  border-radius: 5px;
-}
+} */
+
 
 /* Light Mode */
 body.light-mode {
@@ -48,4 +52,7 @@ body.light-mode {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden; /* Ensure no unwanted scrolling */
 }

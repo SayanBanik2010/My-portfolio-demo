@@ -10,11 +10,12 @@
 
 .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: clamp(1px, 0.2vw, 3px);
+    /* Responsive size */
+    height: clamp(1px, 0.2vw, 3px);
     background: wheat;
     border-radius: 50%;
-    animation: floatParticle 5s infinite ease-in-out;
+    animation: floatParticle ease-in-out infinite alternate;
     box-shadow: 0 0 10px wheat, 0 0 20px wheat, 0 0 30px wheat;
 }
 
@@ -33,6 +34,6 @@
 }
 
 :global(body.light-mode) .particle {
-    background: #888;
+    background: rgba(136, 136, 136, 0.7);
     box-shadow: 0 0 10px #888, 0 0 20px #888, 0 0 30px #888;
 }

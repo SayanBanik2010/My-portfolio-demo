@@ -9,11 +9,23 @@
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 calc(50% - 40px);
-    max-width: calc(50% - 40px);
+    flex: 0 0 370px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+}
+
+.cardContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cardFooter {
+    margin-top: 10px;
 }
 
 .card h3 {
@@ -90,25 +102,25 @@
 }
 
 /* Light Mode Styles */
-body.light-mode .card {
+:global(body.light-mode) .card {
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1),
         -15px -15px 30px rgba(255, 255, 255, 0.5);
 }
 
-body.light-mode .card h3 {
+:global(body.light-mode) .card h3 {
+    color: #222;
+}
+
+:global(body.light-mode) .card p {
     color: #333;
 }
 
-body.light-mode .card p {
-    color: #555;
+:global(body.light-mode) .card ul li {
+    color: #333;
 }
 
-body.light-mode .card ul li {
-    color: #555;
-}
-
-body.light-mode .viewButton {
+:global(body.light-mode) .viewButton {
     background: #d71b64a1;
     color: white;
 }
@@ -121,19 +133,87 @@ body.light-mode .viewButton {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .card {
+        flex: 0 0 340px;
+        width: 340px;
+    }
+}
+
 @media (max-width: 768px) {
     .card {
-        flex: 1 1 100%;
-        max-width: 292px;
-        height: 400px;
+        flex: 0 0 300px;
+        width: 300px;
+        height: 380px;
         padding: 15px;
     }
 
     .card h3 {
         font-size: 1.3rem;
+        margin-top: 40px;
     }
 
     .card p {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .card {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 320px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        height: 420px;
+        padding: 15px 10px;
+    }
+    
+    .cardLogo {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .card h3 {
+        font-size: 1.2rem;
+        margin-top: 35px;
+        margin-bottom: 8px;
+    }
+    
+    .card p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+    
+    .card ul li {
+        font-size: 0.8rem;
+        margin-bottom: 3px;
+    }
+    
+    .viewButton {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .cardContent {
+        max-height: 340px;
+    }
+}
+
+@media (max-width: 350px) {
+    .card {
+        height: 440px;
+    }
+    
+    .card p {
+        font-size: 0.8rem;
+    }
+    
+    .cardContent {
+        max-height: 360px;
     }
 }

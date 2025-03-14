@@ -11,10 +11,10 @@ import styles from './Essence.module.css'; // Import scoped CSS
 const Essence = () => {
     return (
         <div>
-            <BinaryRain />
-            <ThemeSwitch />
             <Header />
             <div className={styles.essenceContainer}>
+                <BinaryRain />
+                <ThemeSwitch />
                 <section className={styles.essenceSection}>
                     <div className={styles.container}>
                         <div className={styles.parent}>
@@ -59,7 +59,7 @@ const Essence = () => {
                         </ul>
                         <p>Check out my work below!</p>
                         <strong>
-                            <a href="craft.html" rel="noopener noreferrer" className={styles.exploreButton} target="_blank">
+                            <a href="#" rel="noopener noreferrer" className={styles.exploreButton} target="_blank">
                                 Explore My Work
                             </a>
                         </strong>
