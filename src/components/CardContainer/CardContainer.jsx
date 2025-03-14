@@ -1,7 +1,8 @@
 import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import styles from './CardContainer.module.css'; // Scoped CSS
 
 const CardContainer = () => {
@@ -20,42 +21,45 @@ const CardContainer = () => {
         { id: 12, img: 'icons8-tailwind-css-48.png', alt: 'Skill 12' },
     ];
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        responsive: [
-            {
-                breakpoint: 900,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
-        ],
-    };
-
     return (
         <div className={styles.cardContainer}>
-            <Slider {...settings} className={styles.cardSlider}>
+            <video autoPlay muted loop id="video-bg" className={styles.video_bg}>
+                <source src="/sea1.mp4" type="video/mp4" />
+            </video>
+            <Swiper
+                modules={[Pagination, Autoplay]}
+                pagination={{ clickable: true }}
+                spaceBetween={10}
+                slidesPerView={3}
+                speed={500}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                breakpoints={{
+                    600: {
+                        slidesPerView: 1,
+                    },
+                    601: {
+                        slidesPerView: 2,
+                    },
+                    901: {
+                        slidesPerView: 3,
+                    }
+                }}
+                className={styles.cardSlider}
+            >
                 {cards.map((card) => (
-                    <div key={card.id} className={styles.card}>
-                        <img src={card.img} alt={card.alt} />
-                    </div>
+                    <SwiperSlide key={card.id} className={styles.card_wpr}>
+                        <div className={styles.card}>
+                            <img src={card.img} alt={card.alt} className={styles.card_icon}/>
+                        </div>
+                    </SwiperSlide>
                 ))}
-            </Slider>
+            </Swiper>
+            {/* <div className={styles.particles}></div>
             <div className={styles.particles}></div>
-            <div className={styles.particles}></div>
-            <div className={styles.particles}></div>
+            <div className={styles.particles}></div> */}
         </div>
     );
 };

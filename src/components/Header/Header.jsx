@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Import Link
 import styles from './Header.module.css';
 
 const Header = () => {
+  const location = useLocation();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [lightMode, setLightMode] = useState(false);
+
+  useEffect(() => {
+      const mode = document.body;
+      if(mode.classList.contains('menu-active')){
+        mode.classList.remove('menu-active');
+      }
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     document.body.classList.toggle('menu-active');
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleTheme = () => {
-    setLightMode(!lightMode);
-    document.body.classList.toggle('light-mode');
   };
 
   return (

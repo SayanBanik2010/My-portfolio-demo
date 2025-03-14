@@ -1,7 +1,18 @@
 import React from 'react';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styles from './ThemeSwitch.module.css';
 
 const ThemeSwitch = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const mode = document.body;
+    if(mode.classList.contains('light-mode')){
+      mode.classList.remove('light-mode');
+    }
+  }, [location.pathname]);
+
   const toggleTheme = () => {
     document.body.classList.toggle('light-mode');
   };
