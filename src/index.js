@@ -11,6 +11,7 @@ import Craft from './pages/Craft';
 import Verified from './pages/Verified';
 import One_Pager from './pages/One-Pager';
 import LinkUp from './pages/LinkUp';
+import Admin from './pages/admin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,8 +24,9 @@ root.render(
         <Route path="/expertise" element={<Expertise />} />
         <Route path="/craft" element={<Craft />} />
         <Route path="/verified" element={<Verified />} />
-        <Route path="/One-Pager" element={<One_Pager />} />
-        <Route path="/LinkUp" element={<LinkUp />} />
+        <Route path="/onePager" element={<One_Pager />} />
+        <Route path="/linkUp" element={<LinkUp />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
